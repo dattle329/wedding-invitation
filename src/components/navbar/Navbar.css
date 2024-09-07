@@ -16,6 +16,13 @@
 
 .navbar-container h1{
     color: rgb(107, 41, 41);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.navbar-container h1:hover{
+    transform: scale(1.2);
+    color: rgb(73, 10, 10);
 }
 
 .navbar-container ul{
