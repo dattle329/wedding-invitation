@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
-.header-container{
+.header-container {
     width: 100%;
     height: calc(100vh - 80px);
     background-color: rgb(167, 37, 33);
@@ -11,31 +11,32 @@
     color: #fff;
     display: flex;
     justify-content: space-between;
-    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    position: relative;
+    z-index: 1;
 }
 
-.header-container .img-content{
+.header-container .img-content {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.header-container .content{
+.header-container .content {
     display: flex;
     flex-direction: column;
     align-items: center;
     row-gap: 40px;
 }
 
-.header-container .content h2{
+.header-container .content h2 {
     margin-top: 100px;
 }
 
-.header-container .content span{
+.header-container .content span {
     font-size: 50px;
 }
 
-.header-container .content p small{
+.header-container .content p small {
     margin-right: 20px;
     margin-left: 20px;
 }
@@ -43,9 +44,9 @@
 .header-container .content .wedding-date {
     font-size: 30px;
     animation: colorChange 10s infinite;
-    position: relative; /* Cần thiết để pseudo-elements hoạt động đúng */
+    position: relative;
     padding: 10px;
-    text-align: center; /* Đảm bảo nội dung nằm giữa */
+    text-align: center;
 }
 
 .header-container .content .wedding-date::before {
@@ -54,12 +55,12 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 60%; /* Độ dài của border-top ngắn hơn */
+    width: 60%;
     border-top: 1px solid rgb(255, 255, 255);
-    z-index: 1; /* Đảm bảo border-top ở trên cùng */
+    z-index: 1;
 }
 
-.header-container .content button{
+.header-container .content button {
     padding: 20px 30px 20px 30px;
     border: none;
     border-radius: 6px;
@@ -68,19 +69,45 @@
     font-weight: bold;
 }
 
-.header-container .img-content{
+.header-container .img-content {
     flex: 1;
     z-index: 999;
 }
 
 @keyframes colorChange {
-    0% { color: rgb(217, 120, 120); }
-    25% { color: rgb(83, 83, 166); }
-    75% { color: orange; }
-    100% { color: rgb(217, 120, 120); } /* Vòng lặp trở về màu ban đầu */
+    0% {
+        color: rgb(217, 120, 120);
+    }
+
+    25% {
+        color: rgb(83, 83, 166);
+    }
+
+    75% {
+        color: orange;
+    }
+
+    100% {
+        color: rgb(217, 120, 120);
+    }
+
+    /* Vòng lặp trở về màu ban đầu */
+}
+
+@keyframes colorChange2 {
+    0% {
+        color: rgb(249, 249, 249);
+    }
+    50%{
+        color: #b41f1f;
+    }
+    100% {
+        color: rgb(255, 255, 255);
+    }
 }
 
 .img-intro {
+    background: linear-gradient(to bottom, #fff, #fff) no-repeat 0 210px;
     display: flex;
     z-index: 2;
     flex-direction: column;
@@ -88,79 +115,146 @@
     align-items: center;
     box-sizing: border-box;
     position: relative;
-    margin-top: -200px; /* Đẩy toàn bộ div lên trên 200px mà không thay đổi height */
     gap: 20px;
+    padding: 40px 0 40px 0;
+    margin-top: -100px;
+    z-index: 2;
 }
 
-
-.img-intro h1{
+.img-intro h1 {
     color: #c47272;
 }
 
-.img-intro span{
+.img-intro span {
     text-align: center;
     width: 800px;
     line-height: 22px;
-    color: #535557;                                
+    color: #535557;
 }
 
-.img-intro span:nth-of-type(2){
+.img-intro span:nth-of-type(2) {
     font-family: 'Dancing Script', 'Arial', sans-serif;
     font-size: 2.3rem;
-    color: #535557;               
-    line-height: 50px;                 
+    color: #535557;
+    line-height: 50px;
 }
 
-.img-intro .img-intro-main img{
+.img-intro .img-intro-main img {
     padding: 15px;
     background-color: #fff;
 }
 
-.invitation{
-    background-color: #8b3434;
+.invitation {
+    background-color: #9b5c5c;
+    background-position: center;
+    background-size: cover;
     width: 100%;
-    height: 100vh;
+    height: 130vh;
     clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 12pt;
+    font-weight: 300000000;
+    color: #937878;
 }
 
-.invitation .invitation-content{
+.invitation .invitation-content {
     display: flex;
-    height: 500px;
-    width: 60%;
+    height: 50%;
+    width: 50%;
+    text-align: center;
 }
 
-.invitation .invitation-content img{
+.invitation .invitation-content span {
+    box-sizing: border-box;
+    padding: 0 50px 0 50px;
+    font-size: 12pt;
+    font-weight: 300;
+}
+
+.invitation .invitation-content img {
     height: 100%;
-    width: 60%;
-}
-
-.invitation .invitation-content .content{
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: #fff;
+    width: 50%;
+    background-position: center;
+    background-size: cover;
     opacity: 0.7;
 }
 
-.invitation .invitation-content .content .date{
+.invitation .invitation-content .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('./src/assets/invitation-img.jpg');
+    background-position: center;
+    background-size: cover;
+    opacity: 0.7;
+    box-sizing: border-box;
+    padding: 20px 0 20px 0;
+    justify-content: space-between;
+}
+
+.invitation .invitation-content .content h2 {
+    color: #b41f1f;
+    font: italic small-caps bold 16px/2 cursive;
+    font-size: 30px;
+}
+
+.invitation .invitation-content .content .invite-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 180px;
+}
+
+.invitation .invitation-content .content button {
+    position: relative;
+    min-width: 240px;
+    max-width: 240px;
+    width: 255px;
+    padding: 12px 0 12px 0;
+    border: solid 1px #fff;
+    background-color: transparent;
+    color: #fff;
+    z-index: 1;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.invitation .invitation-content .content button:hover {
+    animation: colorChange2 1s infinite;
+}
+
+.invitation .invitation-content .content button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 0, 0, 0.411);
+    filter: blur(8px);
+    z-index: -1;
+    border-radius: 6px;
+}
+
+.invitation .invitation-content .content .date {
     font-family: 'Marmelad', sans-serif;
     font-size: 26pt;
     font-weight: 700;
     position: relative;
-    padding: 35px 0 41px;
+    padding: 2px 0 2px;
     margin: 20px 0;
-    color: #8b3434;
+    color: #ffffff;
+    animation: colorChange 10s infinite;
+
 }
 
-.invitation .invitation-content .content .date::before{
+.invitation .invitation-content .content .date::before {
     content: "";
     width: 100%;
-    height: 19px;
+    height: 2px;
     position: absolute;
     top: 0;
     left: 0;
@@ -173,10 +267,10 @@
     opacity: .5;
 }
 
-.invitation .invitation-content .content .date::after{
+.invitation .invitation-content .content .date::after {
     content: "";
     width: 100%;
-    height: 19px;
+    height: 2px;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -188,4 +282,38 @@
     -moz-opacity: 0.5;
     opacity: .5;
     transform: scaleY(-1);
+}
+
+.invitation .invitation-content .content .countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+}
+
+.time-section {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.time {
+    font-size: 40px;
+    font-weight: bold;
+    color: #333;
+    padding: 10px 20px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    opacity: .8;
+}
+
+.label {
+    font-size: 16px;
+    text-align: center;
+    color: #ffffff;
 }
