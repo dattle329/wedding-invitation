@@ -1,15 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
 .header-container{
     width: 100%;
-    height: calc(100vh - 100px);
-    background-color: rgb(226, 98, 43);
+    height: calc(100vh - 80px);
+    background-color: rgb(167, 37, 33);
     background-size: cover;
     background-position: center;
     font-family: cursive;
     font-weight: bold;
     color: #fff;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+}
+
+.header-container .img-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .header-container .content{
@@ -72,8 +80,112 @@
     100% { color: rgb(217, 120, 120); } /* Vòng lặp trở về màu ban đầu */
 }
 
-.img-content-main{
+.img-intro {
+    display: flex;
+    z-index: 2;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+    margin-top: -200px; /* Đẩy toàn bộ div lên trên 200px mà không thay đổi height */
+    gap: 20px;
+}
+
+
+.img-intro h1{
+    color: #c47272;
+}
+
+.img-intro span{
+    text-align: center;
+    width: 800px;
+    line-height: 22px;
+    color: #535557;                                
+}
+
+.img-intro span:nth-of-type(2){
+    font-family: 'Dancing Script', 'Arial', sans-serif;
+    font-size: 2.3rem;
+    color: #535557;               
+    line-height: 50px;                 
+}
+
+.img-intro .img-intro-main img{
+    padding: 15px;
+    background-color: #fff;
+}
+
+.invitation{
+    background-color: #8b3434;
     width: 100%;
-    height: 800px;
-    background-color: aqua;
+    height: 100vh;
+    clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.invitation .invitation-content{
+    display: flex;
+    height: 500px;
+    width: 60%;
+}
+
+.invitation .invitation-content img{
+    height: 100%;
+    width: 60%;
+}
+
+.invitation .invitation-content .content{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #fff;
+    opacity: 0.7;
+}
+
+.invitation .invitation-content .content .date{
+    font-family: 'Marmelad', sans-serif;
+    font-size: 26pt;
+    font-weight: 700;
+    position: relative;
+    padding: 35px 0 41px;
+    margin: 20px 0;
+    color: #8b3434;
+}
+
+.invitation .invitation-content .content .date::before{
+    content: "";
+    width: 100%;
+    height: 19px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: black;
+    -khtml-opacity: 0.5;
+    -moz-opacity: 0.5;
+    opacity: .5;
+}
+
+.invitation .invitation-content .content .date::after{
+    content: "";
+    width: 100%;
+    height: 19px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: black;
+    -khtml-opacity: 0.5;
+    -moz-opacity: 0.5;
+    opacity: .5;
+    transform: scaleY(-1);
 }

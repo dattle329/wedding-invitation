@@ -1,103 +1,8 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import './Header.css';
 import confetti from 'canvas-confetti';
 
 export default function Header() {
-    const canvasRefs = [useRef(null), useRef(null)];
-
-    useEffect(() => {
-        const [canvas1, canvas2] = canvasRefs.map(ref => ref.current);
-        const ctx1 = canvas1.getContext('2d');
-        const ctx2 = canvas2.getContext('2d');
-
-        const setupCanvas = (canvas, ctx) => {
-            const imgContent = canvas.parentElement;
-            const width = imgContent.offsetWidth;
-            const height = imgContent.offsetHeight;
-            canvas.width = width;
-            canvas.height = height;
-
-            const imageSources = [
-                './src/assets/1.jpg',
-                './src/assets/2.jpg',
-                './src/assets/3.jpg',
-                './src/assets/4.jpg',
-                './src/assets/5.jpg'
-            ]; // Link đến các ảnh của bạn
-            const imgWidth = 200; // Kích thước cố định của ảnh
-            const imgHeight = 300;
-            const maxImages = imageSources.length;
-
-            // Tạo danh sách các ảnh để rơi
-            const images = [];
-            let nextImageIndex = 0;
-
-            function createImage(src) {
-                const img = new Image();
-                img.src = src;
-                return {
-                    x: (nextImageIndex * (imgWidth + 10)) % (width - imgWidth), // Đảm bảo không chồng lên nhau
-                    y: Math.random() * -height,
-                    size: { width: imgWidth, height: imgHeight },
-                    speed: 0.5,
-                    img: img
-                };
-            }
-
-            // Tạo các ảnh ban đầu
-            function initializeImages() {
-                for (let i = 0; i < maxImages; i++) {
-                    images.push(createImage(imageSources[i % imageSources.length]));
-                    nextImageIndex++;
-                }
-            }
-
-            initializeImages();
-
-            function drawImage(image) {
-                ctx.drawImage(image.img, image.x, image.y, image.size.width, image.size.height);
-            }
-
-            function updateImages() {
-                for (let i = 0; i < images.length; i++) {
-                    const image = images[i];
-                    image.y += image.speed;
-                    if (image.y > height) {
-                        // Khi ảnh rơi ra khỏi màn hình, đặt lại y và cập nhật vị trí x
-                        image.y = -image.size.height;
-                        image.x = (i * (imgWidth + 10)) % (width - imgWidth);
-                    }
-                }
-            }
-
-            function animate() {
-                ctx.clearRect(0, 0, width, height);
-                updateImages();
-                images.forEach(drawImage);
-                requestAnimationFrame(animate);
-            }
-
-            animate();
-
-            const handleResize = () => {
-                canvas.width = imgContent.offsetWidth;
-                canvas.height = imgContent.offsetHeight;
-                // Điều chỉnh lại vị trí ảnh khi thay đổi kích thước
-                images.forEach((image, index) => {
-                    image.x = (index * (imgWidth + 10)) % (width - imgWidth);
-                });
-            };
-            window.addEventListener('resize', handleResize);
-
-            return () => {
-                window.removeEventListener('resize', handleResize);
-            };
-        };
-
-        // Setup canvas for both img-content divs
-        setupCanvas(canvas1, ctx1);
-        setupCanvas(canvas2, ctx2);
-    }, [canvasRefs]);
 
     const fireworkEffect = () => {
         confetti({
@@ -119,25 +24,47 @@ export default function Header() {
         <>
         <div className='header-container'>
             <div className="img-content">
-                <canvas ref={canvasRefs[0]}></canvas>
+                <img src="./src/assets/6.png" alt="" width="300px" height="300px"/>
             </div>
             <div className="content">
                 <h2>SAVE THE DAY</h2>
                 <p>
-                    <span>Tuấn Đạt</span>
+                    <span>Chu Khánh</span>
                     <small>&</small>
-                    <span>Khánh Lan</span>
+                    <span>Milo</span>
                 </p>
                 <div className="wedding-date">
                     08 Tháng 9 2024
                 </div>
-                <button>Gửi tiền cho Lan mua váy</button>
+                <button>Gửi tiền cho Khánh mua váy</button>
             </div>
             <div className="img-content">
-                <canvas ref={canvasRefs[1]}></canvas>
+                 <img src="./src/assets/7.webp" alt="" width="300px" height="300px" />
             </div>
         </div>
+        <div className="img-intro">
+            <div className="img-intro-main">
+                <img src="./src/assets/khanhsky.jpg" alt="" width="380px" height="380px"/>
+                <img src="https://www.jerrygreendogs.org.uk/wp-content/uploads/dogs-archive-header-1.png" alt="" width="380px" height="380px"/>
+            </div>
+            <h1>We are Getting Married</h1>
+            <span>Thật vui vì được gặp và đón tiếp các bạn trong một dịp đặc biệt như đám cưới của chúng tôi. 
+                Chúng tôi muốn gửi đến bạn những lời cảm ơn sâu sắc nhất và để bạn biết chúng tôi rất hạnh phúc khi thấy bạn ở đó. 
+                Cảm ơn các bạn rất nhiều vì sự hiện diện cùng những lời chúc tốt đẹp mà bạn đã dành cho chúng tôi!</span>
+            <span>Chu Khánh <p>&</p> Con chó</span>
+        </div>
         
+        <div className="invitation">
+            <div className="invitation-content">
+                <img src="https://people.com/thmb/QU8_FbTRBMqLaF6zBidIE-_ffIs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(1079x532:1081x534)/dog-weddng-record-092722-2000-064c5df4ab8448cfb76581cc8449fdcb.jpg" alt="" />
+                <div className="content">
+                    <span>Chu Khánh & Con chó</span>
+                    <span>Trân trọng kính mời</span>
+                    <span>Tới dự Lễ Thành Hôn của chúng tôi:</span>
+                    <div className='date'>09.09.24 </div>
+                </div>
+            </div>
+        </div>
         </>
     );
 }
