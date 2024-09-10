@@ -1,19 +1,5 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    position: relative;
-}
-
-.container {
-    width: 100%;
-    height: 100vh;
-    background-color: rgb(122, 93, 54);
-}
-
 .list-menu-icon {
     width: 100%;
-    position: absolute;
     background-color: transparent;
     bottom: 80px;
     display: flex;
@@ -21,12 +7,33 @@
     align-items: flex-end;
 }
 
+.list-menu-icon .music-icon{
+    position: relative;
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+}
+
+
+.list-menu-icon .music-icon::after{
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(242, 59, 67, 0.3);
+    width: 120%;
+    height: 120%;
+    top: -10%;
+    left: 90%;
+    z-index: -1; /* Để ::after không che khuất phần tử gốc */
+    animation: biilogo-pulse 1s infinite;
+}
+
 .list-menu-icon ul {
     display: flex;
     flex-direction: column;
     gap: 8px;
     margin-left: 40px;
-    margin-right: 20px;
+    margin-right: 40px;
 }
 
 .list-menu-icon li {
@@ -40,6 +47,9 @@
     color: #fff;
     position: relative;
     cursor: pointer;
+}
+
+.list-menu-icon .wedding-function-icon li:first-child{
 }
 
 .icon-label {
@@ -74,52 +84,17 @@
     visibility: visible;
 }
 
-
-
-.navbar-container {
-    background-color: rgb(194, 157, 127);
-    width: 100%;
-    height: 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 200px 0 200px;
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-}
-
-.navbar-container h1 {
-    color: rgb(107, 41, 41);
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.navbar-container h1:hover {
-    transform: scale(1.2);
-    color: rgb(73, 10, 10);
-}
-
-.navbar-container ul {
-    list-style: none;
-    display: flex;
-    color: rgb(212, 154, 113);
-    font-family: 'Roboto Mono', monospace;
-}
-
-.navbar-container ul li a {
-    text-decoration: none;
-    color: rgb(101, 39, 39);
-}
-
-.navbar-container ul li {
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.navbar-container ul li:hover {
-    color: rgb(100, 55, 23);
-    font-weight: bold;
-    font-size: medium;
-    cursor: pointer;
+@keyframes biilogo-pulse{
+    0% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+    50% {
+        -webkit-transform: scale3d(0.95, 0.95, 0.95);
+        transform: scale3d(0.95, 0.95, 0.95);
+    }
+    100% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
 }

@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import './Header.css';
 import confetti from 'canvas-confetti';
+import MarkEmailReadIcon from '@mui/icons-material/MarkEmailRead';
 
 export default function Header() {
 
     const calculateTimeLeft = () => {
-        const targetDate = new Date('2024-09-10T00:00:00');
+        const targetDate = new Date('2024-09-15T00:00:00');
         const now = new Date();
         const difference = targetDate - now;
 
