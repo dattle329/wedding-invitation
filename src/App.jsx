@@ -24,7 +24,7 @@ function App() {
       <div className="list-menu">
         <ListMenuIcon />
       </div>
-      <div className="album-photo-app">
+      <div className="album-photo-app"> 
         <AlbumPhoto />
       </div>
     </div>

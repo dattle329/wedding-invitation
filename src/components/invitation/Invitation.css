@@ -19,7 +19,6 @@
     width: 50%;
     text-align: center;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
-    /* Đổ bóng mềm mại */
     border-radius: 15px;
     border: 1px solid #e1d7c6;
     overflow: hidden;
@@ -27,7 +26,7 @@
 
 .invitation .invitation-content span {
     box-sizing: border-box;
-    padding: 0 50px 0 50px;
+    padding: 0 50px;
     font-size: 12pt;
     font-weight: 300;
 }
@@ -49,8 +48,7 @@
     background-position: center;
     background-size: cover;
     opacity: 0.7;
-    box-sizing: border-box;
-    padding: 20px 0 20px 0;
+    padding: 20px 0;
     justify-content: space-between;
 }
 
@@ -72,7 +70,7 @@
     min-width: 240px;
     max-width: 240px;
     width: 255px;
-    padding: 12px 0 12px 0;
+    padding: 12px 0;
     border: solid 1px #fff;
     background-color: transparent;
     color: #fff;
@@ -103,7 +101,7 @@
     font-size: 26pt;
     font-weight: 700;
     position: relative;
-    padding: 2px 0 2px;
+    padding: 2px 0;
     margin: 20px 0;
     color: #ffffff;
     animation: colorChange 10s infinite;
@@ -117,12 +115,8 @@
     top: 0;
     left: 0;
     z-index: 0;
-    background-position: center center;
-    background-repeat: no-repeat;
     background-color: black;
-    -khtml-opacity: 0.5;
-    -moz-opacity: 0.5;
-    opacity: .5;
+    opacity: 0.5;
 }
 
 .invitation .invitation-content .content .date::after {
@@ -133,12 +127,8 @@
     bottom: 0;
     left: 0;
     z-index: 0;
-    background-position: center center;
-    background-repeat: no-repeat;
     background-color: black;
-    -khtml-opacity: 0.5;
-    -moz-opacity: 0.5;
-    opacity: .5;
+    opacity: 0.5;
     transform: scaleY(-1);
 }
 
@@ -187,5 +177,52 @@
 
     100% {
         color: rgb(255, 255, 255);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .invitation .invitation-content {
+        width: 70%;
+    }
+}
+
+@media (max-width: 768px) {
+    .invitation .invitation-content {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .invitation .invitation-content img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .invitation {
+        height: auto;
+        clip-path: none;
+    }
+
+    .invitation .invitation-content {
+        width: 100%;
+    }
+
+    .invitation .invitation-content span {
+        font-size: 10pt;
+        padding: 0 20px;
+    }
+
+    .invitation .invitation-content .content button {
+        width: 200px;
+    }
+
+    .time {
+        font-size: 32px;
+    }
+
+    .label {
+        font-size: 14px;
     }
 }

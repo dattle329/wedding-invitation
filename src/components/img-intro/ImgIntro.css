@@ -8,7 +8,7 @@
     box-sizing: border-box;
     position: relative;
     gap: 20px;
-    padding: 40px 0 40px 0;
+    padding: 40px 0;
     z-index: 2;
 }
 
@@ -33,4 +33,45 @@
 .img-intro .img-intro-main img {
     padding: 15px;
     background-color: #fff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .img-intro span {
+        width: 600px;
+    }
+
+    .img-intro span:nth-of-type(2) {
+        font-size: 2rem;
+        line-height: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .img-intro span {
+        width: 90%;
+        line-height: 20px;
+    }
+
+    .img-intro span:nth-of-type(2) {
+        font-size: 1.8rem;
+        line-height: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    .img-intro {
+        padding: 20px 0;
+    }
+
+    .img-intro span {
+        width: 100%;
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    .img-intro span:nth-of-type(2) {
+        font-size: 1.6rem;
+        line-height: 32px;
+    }
 }

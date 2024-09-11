@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
-.header-container{
+.header-container {
     width: 100%;
     height: calc(100vh - 80px);
     background-color: rgb(167, 37, 33);
@@ -14,28 +14,28 @@
     clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
 }
 
-.header-container .img-content{
+.header-container .img-content {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.header-container .content{
+.header-container .content {
     display: flex;
     flex-direction: column;
     align-items: center;
     row-gap: 40px;
 }
 
-.header-container .content h2{
+.header-container .content h2 {
     margin-top: 100px;
 }
 
-.header-container .content span{
+.header-container .content span {
     font-size: 50px;
 }
 
-.header-container .content p small{
+.header-container .content p small {
     margin-right: 20px;
     margin-left: 20px;
 }
@@ -43,9 +43,9 @@
 .header-container .content .wedding-date {
     font-size: 30px;
     animation: colorChange 10s infinite;
-    position: relative; /* Cần thiết để pseudo-elements hoạt động đúng */
+    position: relative;
     padding: 10px;
-    text-align: center; /* Đảm bảo nội dung nằm giữa */
+    text-align: center;
 }
 
 .header-container .content .wedding-date::before {
@@ -54,13 +54,13 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 60%; /* Độ dài của border-top ngắn hơn */
+    width: 60%;
     border-top: 1px solid rgb(255, 255, 255);
-    z-index: 1; /* Đảm bảo border-top ở trên cùng */
+    z-index: 1;
 }
 
-.header-container .content button{
-    padding: 20px 30px 20px 30px;
+.header-container .content button {
+    padding: 20px 30px;
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -68,7 +68,7 @@
     font-weight: bold;
 }
 
-.header-container .img-content{
+.header-container .img-content {
     flex: 1;
     z-index: 999;
 }
@@ -77,7 +77,7 @@
     0% { color: rgb(217, 120, 120); }
     25% { color: rgb(83, 83, 166); }
     75% { color: orange; }
-    100% { color: rgb(217, 120, 120); } /* Vòng lặp trở về màu ban đầu */
+    100% { color: rgb(217, 120, 120); }
 }
 
 .img-intro {
@@ -88,35 +88,34 @@
     align-items: center;
     box-sizing: border-box;
     position: relative;
-    margin-top: -200px; /* Đẩy toàn bộ div lên trên 200px mà không thay đổi height */
+    margin-top: -200px;
     gap: 20px;
 }
 
-
-.img-intro h1{
+.img-intro h1 {
     color: #c47272;
 }
 
-.img-intro span{
+.img-intro span {
     text-align: center;
     width: 800px;
     line-height: 22px;
-    color: #535557;                                
+    color: #535557;
 }
 
-.img-intro span:nth-of-type(2){
+.img-intro span:nth-of-type(2) {
     font-family: 'Dancing Script', 'Arial', sans-serif;
     font-size: 2.3rem;
-    color: #535557;               
-    line-height: 50px;                 
+    color: #535557;
+    line-height: 50px;
 }
 
-.img-intro .img-intro-main img{
+.img-intro .img-intro-main img {
     padding: 15px;
     background-color: #fff;
 }
 
-.invitation{
+.invitation {
     background-color: #8b3434;
     width: 100%;
     height: 100vh;
@@ -126,18 +125,18 @@
     align-items: center;
 }
 
-.invitation .invitation-content{
+.invitation .invitation-content {
     display: flex;
     height: 500px;
     width: 60%;
 }
 
-.invitation .invitation-content img{
+.invitation .invitation-content img {
     height: 100%;
     width: 60%;
 }
 
-.invitation .invitation-content .content{
+.invitation .invitation-content .content {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -147,7 +146,7 @@
     opacity: 0.7;
 }
 
-.invitation .invitation-content .content .date{
+.invitation .invitation-content .content .date {
     font-family: 'Marmelad', sans-serif;
     font-size: 26pt;
     font-weight: 700;
@@ -157,7 +156,7 @@
     color: #8b3434;
 }
 
-.invitation .invitation-content .content .date::before{
+.invitation .invitation-content .content .date::before {
     content: "";
     width: 100%;
     height: 19px;
@@ -165,15 +164,11 @@
     top: 0;
     left: 0;
     z-index: 0;
-    background-position: center center;
-    background-repeat: no-repeat;
     background-color: black;
-    -khtml-opacity: 0.5;
-    -moz-opacity: 0.5;
     opacity: .5;
 }
 
-.invitation .invitation-content .content .date::after{
+.invitation .invitation-content .content .date::after {
     content: "";
     width: 100%;
     height: 19px;
@@ -181,11 +176,84 @@
     bottom: 0;
     left: 0;
     z-index: 0;
-    background-position: center center;
-    background-repeat: no-repeat;
     background-color: black;
-    -khtml-opacity: 0.5;
-    -moz-opacity: 0.5;
     opacity: .5;
     transform: scaleY(-1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .header-container .content span {
+        font-size: 40px;
+    }
+
+    .header-container .content .wedding-date {
+        font-size: 24px;
+    }
+
+    .img-intro span {
+        width: 600px;
+    }
+
+    .invitation .invitation-content {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    .header-container .content h2 {
+        margin-top: 50px;
+    }
+
+    .header-container .content span {
+        font-size: 30px;
+    }
+
+    .header-container .content .wedding-date {
+        font-size: 20px;
+    }
+
+    .img-intro span {
+        width: 90%;
+    }
+
+    .invitation .invitation-content {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+    }
+
+    .invitation .invitation-content img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container .content h2 {
+        margin-top: 30px;
+        font-size: 24px;
+    }
+
+    .header-container .content span {
+        font-size: 20px;
+    }
+
+    .header-container .content .wedding-date {
+        font-size: 18px;
+    }
+
+    .img-intro span {
+        font-size: 16px;
+    }
+
+    .invitation .invitation-content .content .date {
+        font-size: 20pt;
+    }
 }
