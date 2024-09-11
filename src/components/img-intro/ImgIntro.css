@@ -1,0 +1,36 @@
+.img-intro {
+    background: linear-gradient(to bottom, #fff, #fff) no-repeat 0 210px;
+    display: flex;
+    z-index: 2;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+    gap: 20px;
+    padding: 40px 0 40px 0;
+    z-index: 2;
+}
+
+.img-intro h1 {
+    color: #c47272;
+}
+
+.img-intro span {
+    text-align: center;
+    width: 800px;
+    line-height: 22px;
+    color: #535557;
+}
+
+.img-intro span:nth-of-type(2) {
+    font-family: 'Dancing Script', 'Arial', sans-serif;
+    font-size: 2.3rem;
+    color: #535557;
+    line-height: 50px;
+}
+
+.img-intro .img-intro-main img {
+    padding: 15px;
+    background-color: #fff;
+}
